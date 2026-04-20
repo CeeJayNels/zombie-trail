@@ -34,7 +34,7 @@ export function Illustration({ kind, name, alt, className }: Props) {
 
   return (
     <img
-      src={`/art/${FOLDER[kind]}/${name}.svg`}
+      src={`${import.meta.env.BASE_URL}art/${FOLDER[kind]}/${name}.svg`}
       alt={alt}
       className={cls}
       onError={() => setFailed(true)}
