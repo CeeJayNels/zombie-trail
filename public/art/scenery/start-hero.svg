@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e0f12"/>
+      <stop offset="0.7" stop-color="#1f2229"/>
+      <stop offset="1" stop-color="#2a2e38"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="220" fill="url(#sky)"/>
+  <circle cx="520" cy="50" r="28" fill="#1f2229" stroke="#9aa0aa" stroke-width="0.5"/>
+  <circle cx="530" cy="45" r="22" fill="#0e0f12"/>
+  <g stroke="#9aa0aa" fill="#9aa0aa" opacity="0.5">
+    <circle cx="80" cy="30" r="1"/>
+    <circle cx="150" cy="50" r="0.8"/>
+    <circle cx="220" cy="25" r="1"/>
+    <circle cx="300" cy="70" r="0.8"/>
+    <circle cx="400" cy="40" r="1"/>
+    <circle cx="460" cy="80" r="0.8"/>
+    <circle cx="600" cy="30" r="1"/>
+  </g>
+  <path d="M0 180 L180 130 L260 130 L320 125 L380 130 L460 130 L640 180 Z" fill="#181a20"/>
+  <path d="M280 130 L360 130 L400 220 L240 220 Z" fill="#2a2e38"/>
+  <g stroke="#d6a35a" stroke-width="2" stroke-dasharray="12 10">
+    <line x1="320" y1="135" x2="320" y2="220"/>
+  </g>
+  <g fill="#181a20">
+    <path d="M50 155 L60 125 L65 125 L75 155 Z"/>
+    <path d="M500 160 L510 135 L515 135 L525 160 Z"/>
+    <path d="M580 165 L590 140 L595 140 L605 165 Z"/>
+  </g>
+
+  <!-- vehicle: larger rear-view, closer to camera on start screen -->
+  <g transform="translate(260 150)">
+    <ellipse cx="60" cy="62" rx="62" ry="5" fill="#0e0f12" opacity="0.8"/>
+    <!-- roof rack with gear -->
+    <rect x="22" y="-8" width="76" height="5" fill="#181a20" stroke="#9aa0aa" stroke-width="0.5"/>
+    <rect x="28" y="-18" width="22" height="10" fill="#2a2e38" stroke="#9aa0aa" stroke-width="0.5"/>
+    <rect x="54" y="-22" width="20" height="14" fill="#2a2e38" stroke="#9aa0aa" stroke-width="0.5"/>
+    <rect x="78" y="-14" width="16" height="6" fill="#d6a35a" stroke="#9aa0aa" stroke-width="0.3"/>
+    <line x1="58" y1="-22" x2="58" y2="-8" stroke="#9aa0aa" stroke-width="0.3"/>
+    <!-- body -->
+    <path d="M14 0 L20 -5 L100 -5 L106 0 L116 28 L116 52 L108 58 L12 58 L4 52 L4 28 Z" fill="#2a2e38" stroke="#7ec96b" stroke-width="1.4"/>
+    <!-- rear window -->
+    <path d="M26 3 L94 3 L100 24 L20 24 Z" fill="#0e0f12" stroke="#7ec96b" stroke-width="0.8"/>
+    <line x1="60" y1="3" x2="60" y2="24" stroke="#7ec96b" stroke-width="0.4"/>
+    <!-- tail lights -->
+    <rect x="8" y="32" width="14" height="8" fill="#d65a5a"/>
+    <rect x="98" y="32" width="14" height="8" fill="#d65a5a"/>
+    <!-- plate -->
+    <rect x="42" y="42" width="36" height="10" fill="#181a20" stroke="#9aa0aa" stroke-width="0.5"/>
+    <text x="60" y="50" text-anchor="middle" fill="#d6a35a" font-family="monospace" font-size="7" font-weight="bold">SURVIVE</text>
+    <!-- wheels -->
+    <ellipse cx="20" cy="58" rx="10" ry="6" fill="#0e0f12" stroke="#9aa0aa" stroke-width="0.8"/>
+    <ellipse cx="100" cy="58" rx="10" ry="6" fill="#0e0f12" stroke="#9aa0aa" stroke-width="0.8"/>
+    <!-- dents / scratches -->
+    <path d="M30 12 L40 14" stroke="#9aa0aa" stroke-width="0.4" opacity="0.6"/>
+    <path d="M80 35 L90 38" stroke="#9aa0aa" stroke-width="0.4" opacity="0.6"/>
+    <!-- exhaust puff -->
+    <circle cx="-4" cy="48" r="5" fill="#9aa0aa" opacity="0.25"/>
+    <circle cx="-12" cy="44" r="6" fill="#9aa0aa" opacity="0.15"/>
+    <!-- headlight spill backward -->
+    <ellipse cx="60" cy="66" rx="80" ry="5" fill="#d6a35a" opacity="0.2"/>
+  </g>
+</svg>

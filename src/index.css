@@ -1,0 +1,320 @@
+:root {
+  --bg: #0e0f12;
+  --panel: #181a20;
+  --panel-2: #1f2229;
+  --border: #2a2e38;
+  --text: #e6e7ea;
+  --muted: #9aa0aa;
+  --accent: #7ec96b;
+  --danger: #d65a5a;
+  --warn: #d6a35a;
+  --hp: #6bbf73;
+  --morale: #6b8fbf;
+  --distance: #d6a35a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 14px;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+button.primary {
+  background: var(--accent);
+  color: #0e0f12;
+  border-color: var(--accent);
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  margin: 0 0 12px 0;
+}
+
+/* Layout */
+.game-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'topbar topbar'
+    'sidebar main';
+  height: 100vh;
+  gap: 1px;
+  background: var(--border);
+}
+.topbar {
+  grid-area: topbar;
+  background: var(--panel);
+  padding: 12px 16px;
+}
+.sidebar {
+  grid-area: sidebar;
+  background: var(--panel);
+  padding: 16px;
+  overflow-y: auto;
+}
+.main {
+  grid-area: main;
+  background: var(--panel);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Resource bar */
+.resource-bar {
+  display: flex;
+  gap: 24px;
+}
+.resource {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.resource-label {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.resource-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Party panel */
+.party-panel h3 {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.survivor {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.survivor.status-healthy { border-left-color: var(--accent); }
+.survivor.status-wounded { border-left-color: var(--warn); }
+.survivor.status-sick    { border-left-color: var(--danger); }
+.survivor.status-dead    { border-left-color: #555; opacity: 0.5; }
+
+.survivor-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.survivor-name { font-weight: bold; }
+.survivor-status {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.bar {
+  width: 100%;
+  height: 6px;
+  background: #0e0f12;
+  border-radius: 3px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+.bar-fill { height: 100%; transition: width 0.3s; }
+.bar-hp { background: var(--hp); }
+.bar-morale { background: var(--morale); }
+.bar-distance { background: var(--distance); }
+
+/* Journey */
+.journey-screen {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.journey-bar {
+  height: 12px;
+  margin-bottom: 24px;
+}
+.log {
+  margin-top: 24px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+.log-line {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.log-line:first-child { color: var(--text); }
+.log-line:last-child { border-bottom: none; }
+
+/* Event */
+.event-screen {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.event-description {
+  background: var(--panel-2);
+  border-left: 3px solid var(--accent);
+  padding: 14px;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.choice {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.choice-cost {
+  color: var(--warn);
+  font-size: 12px;
+}
+
+/* Start / Game Over */
+.start-screen,
+.gameover-screen {
+  max-width: 520px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+.start-screen h1,
+.gameover-screen h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.start-screen p,
+.gameover-screen p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.memorial {
+  text-align: left;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  margin: 0 0 24px 0;
+  border-radius: 4px;
+  list-style: none;
+}
+.memorial li {
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+/* Illustrations */
+.illustration {
+  display: block;
+}
+.illustration-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--panel-2);
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.event-illustration {
+  width: 100%;
+  max-height: 320px;
+  min-height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.portrait {
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.survivor-row {
+  align-items: center;
+}
+.survivor-name { flex: 1; }
+
+.resource-icon {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.resource-label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.journey-scenery {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.hero {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.endscreen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
