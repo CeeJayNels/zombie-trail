@@ -1,8 +1,19 @@
 # Roblox Setup Guide — Zombie Trail
 
-**Version:** 1.0 · **Last updated:** 2026-10-25
+**Version:** 1.1 · **Last updated:** 2026-10-25
 
 This guide explains how to bring Zombie Trail to Roblox: what you need to install, what to decide before building, and the order to build in. Nothing here has been built yet. It's the plan.
+
+---
+
+## Account details
+
+| Item | Value |
+|---|---|
+| Roblox username | `Roadkill_Interactive` |
+| Roblox group (studio) | _Not created yet. Optional: publish the game under a group so the page shows "By [Studio Name]"_ |
+
+> Changing a Roblox username costs 1,000 Robux. The display name can be changed for free (about once a week).
 
 ---
 
@@ -31,7 +42,8 @@ Roblox can't run React or show a website inside a game, so the game has to be **
 
 ## 2. One-time setup checklist
 
-- [ ] **Roblox account.** Create one or use an existing one, and verify your email.
+- [x] **Roblox account.** Created as `Roadkill_Interactive`.
+- [ ] **Verify your email** on the Roblox account.
 - [ ] **Roblox Studio.** Free download from <https://create.roblox.com>. Runs on Windows and Mac.
 - [ ] **Rojo.** Syncs code from this repo into Studio, so the Roblox code stays in Git with version control. You install it two ways:
   - the **Rojo plugin** inside Studio (Plugins tab → Manage Plugins / Creator Store), and
@@ -95,3 +107,4 @@ Roblox changes these figures over time. Check the current numbers at <https://cr
 | Version | Date | Change |
 |---|---|---|
 | 1.0 | 2026-10-25 | First version of the setup guide |
+| 1.1 | 2026-10-25 | Added the Account details section (username `Roadkill_Interactive`) and ticked off account creation |
